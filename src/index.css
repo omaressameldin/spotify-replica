@@ -1,0 +1,41 @@
+body{
+	margin: 0;
+	font-family: helvetica;
+}
+
+h1,h2,h3,h4,h5,h6, p, a{
+	font-family: helvetica;
+}
+
+.container{
+	padding: 40px;
+}
+
+.contacts{
+	background-color: pink;
+	max-width: 700px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.user{
+	margin-bottom: 20px;
+}
+
+.user img{
+	border-radius: 50%;
+	vertical-align: middle;
+	margin-right: 20px;
+}
+
+.user-details{
+	display: inline-block;
+}
+
+.user-details h5{
+	margin: 0;
+}
+
+.user-details p{
+	margin: 0;
+}
