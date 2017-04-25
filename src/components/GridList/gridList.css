@@ -1,0 +1,8 @@
+.grid{
+flex-grow: 1;
+overflow-y: auto;
+height:100vh;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around
+}

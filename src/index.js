@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+import GridList from './components/GridList/GridList'
+import Menu from './components/Menu/Menu'
 import './index.css';
-import MusicList from './components/MusicList'
-import Menu from './components/Menu'
+
 class App extends React.Component {
     constructor() {
         super();
@@ -12,13 +13,12 @@ class App extends React.Component {
 
     render() {
         return ( 
-            <div>
+            <div >
                 <Router>
-                    <div>
+                    <div className = "container">
                     <Menu/>                      
-                    <hr/>
-                    <Route exact path="/" component={MusicList}/>
-                    <Route path="/about" component={MusicList}/>
+                    <Route exact path="/" component={GridList}/>
+                    <Route path="/about" component={GridList}/>
                     </div>
                 </Router>               
 			</div>
