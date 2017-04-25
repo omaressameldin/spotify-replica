@@ -6,3 +6,6 @@ display: flex;
 flex-wrap: wrap;
 justify-content: space-around
 }
+.main{
+    background-color: #191919;
+}

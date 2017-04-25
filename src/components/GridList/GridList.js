@@ -20,7 +20,7 @@ class MusicList extends React.Component{
     }
         render() {
 		return(
-                <main>
+                <main className = "main">
 				<ul className="grid">
 					{this.state.list.map(function(item, i){
                         let hasImage = item.images;
