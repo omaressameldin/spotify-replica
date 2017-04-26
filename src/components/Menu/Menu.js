@@ -8,7 +8,7 @@ function Menu(){
 		<div className="menuWrapper">
 		<img src = {logo} className = "logo"></img>
 		<ul className = "navigationMenu">
-			<li className = "navigationMenu__item"><Link class = "navigationMenu__item__link" to="/">home</Link></li>
+			<li className = "navigationMenu__item"><Link  to="/">home</Link></li>
 			<li className = "navigationMenu__item"><Link to="/about">Albuns</Link></li>
 			<li className = "navigationMenu__item"><Link to="/about">Artists</Link></li>
 			

@@ -1,6 +1,6 @@
 .sidebar{
     background-color: black;
-    min-width: 200px;
+    width: 200px;
     padding-left:40px;
     padding-right:40px; 
     text-align: left;

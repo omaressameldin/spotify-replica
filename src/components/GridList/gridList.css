@@ -1,11 +1,35 @@
 .grid{
-flex-grow: 1;
 overflow-y: auto;
 height:100vh;
 display: flex;
 flex-wrap: wrap;
-justify-content: space-around
+justify-content: space-around;
 }
+/* 191919 */
 .main{
-    background-color: #191919;
+    flex-grow: 1;
+    background-color:#191919;
+}
+.album{
+    width:100%;
+    height:500px;
+    background-size:cover;
+    opacity: 1;
+    transition: all 0.2s ease-in;
+}
+.grid__item{
+    width:24%;
+    text-align: center;
+    color:white;
+    font-size: large;
+    font-weight: bold;
+    text-decoration: none;   
+    margin-top:10px;
+    margin-bottom: 10px;     
+}
+.songName{
+    margin-top:15px;
+}
+.grid__item:hover .album{
+    opacity: 0.2
 }

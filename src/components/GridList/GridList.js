@@ -1,7 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 import './gridList.css';
-class MusicList extends React.Component{
+import {Link} from 'react-router-dom';
+
+class GridList    extends React.Component{
         constructor() {
         super();
         this.state= {
@@ -20,20 +22,21 @@ class MusicList extends React.Component{
     }
         render() {
 		return(
-                <main className = "main">
-				<ul className="grid">
-					{this.state.list.map(function(item, i){
-                        let hasImage = item.images;
-						return (
-                            <div key={i}>
-                            <h5 >{item.name}</h5>
-                            <img src={(hasImage)?item.images[0].url : ''}/>
-                            </div>
-                            )
-					})}
-				</ul>
-                </main>
+                <div className="main">
+                    <div className = "grid">
+                        {this.state.list.map(function(item, i){
+                            let hasImage = item.images;
+                            return (
+                                <Link to="/" className="grid__item" key={i}>
+                                <div className="album" style={{backgroundImage: `url(${(hasImage)?item.images[0].url : ''})`}}></div>
+                                <h5 className="songName">{item.name}</h5>                            
+                                {/*<img src={(hasImage)?item.images[0].url : ''}/>*/}
+                                </Link>
+                                )
+                        })}
+                    </div>
+                </div>
 		)
     }
 }
-export default MusicList;
+export default GridList;
