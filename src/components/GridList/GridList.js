@@ -21,7 +21,6 @@ class GridList    extends React.Component{
         this.getItems();
     }    
     getItems(){
-        console.log("updated")
         if(this.props.url == "")
             return
         axios.get(this.props.url).then((response) =>{

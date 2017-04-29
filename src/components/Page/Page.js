@@ -22,7 +22,6 @@ class Page extends React.Component{
         }
     }
         render() {
-            console.log("rendered")
             let searchInput = '';
             if(this.props.search){
             searchInput = (				
