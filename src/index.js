@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import GridList from './components/GridList/GridList'
+import Page from './components/Page/Page'
 import Menu from './components/Menu/Menu'
 import './index.css';
 
@@ -17,8 +17,8 @@ class App extends React.Component {
                 <Router>
                     <div className = "container">
                     <Menu/>                      
-                    <Route exact path="/" component={GridList}/>
-                    <Route path="/about" component={GridList}/>
+                    <Route exact path="/" component={()=><Page search = {false} url="https://api.spotify.com/v1/search?type=artist&q=ad" title="Top Artists" />}/>
+                    <Route exact path="/albums" component={()=><Page search = {true} title="search for albums" />}/>
                     </div>
                 </Router>               
 			</div>

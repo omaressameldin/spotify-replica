@@ -4,14 +4,14 @@ import './gridList.css';
 import {Link} from 'react-router-dom';
 
 class GridList    extends React.Component{
-        constructor() {
-        super();
+        constructor(props) {
+        super(props);
         this.state= {
-            list:[{name:"omar hassan"}]
+            list:[]
         }
     }
     componentDidMount(){
-        axios.get('https://api.spotify.com/v1/search?type=artist&q=ad').then((response) =>{
+        axios.get(this.props.url).then((response) =>{
             console.log(response.data)
            this.setState({list: response.data.artists.items});
         },
@@ -21,9 +21,10 @@ class GridList    extends React.Component{
         );
     }
         render() {
+     
 		return(
-                <div className="main">
                     <div className = "grid">
+                        
                         {this.state.list.map(function(item, i){
                             let hasImage = item.images;
                             return (
@@ -35,7 +36,6 @@ class GridList    extends React.Component{
                                 )
                         })}
                     </div>
-                </div>
 		)
     }
 }

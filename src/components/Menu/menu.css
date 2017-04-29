@@ -21,7 +21,7 @@
 .navigationMenu__item{
     margin-bottom: 10px;
 }
-.navigationMenu__item a{
+.navigationMenu__item__link{
       text-decoration: none;
       text-transform: capitalize;
       font-size: 20px;
@@ -30,7 +30,7 @@
       opacity: 0.7;
       transition: all 0.2s ease-in
 }
-.navigationMenu__item a:hover, navigationMenu__item .active{
+.navigationMenu__item__link:hover,  .active{
  opacity: 1;   
 }
 .loggedIn{

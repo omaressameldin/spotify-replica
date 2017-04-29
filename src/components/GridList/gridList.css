@@ -1,15 +1,9 @@
 .grid{
-overflow-y: auto;
-height:100vh;
 display: flex;
 flex-wrap: wrap;
 justify-content: space-around;
 }
-/* 191919 */
-.main{
-    flex-grow: 1;
-    background-color:#191919;
-}
+
 .album{
     width:100%;
     height:500px;

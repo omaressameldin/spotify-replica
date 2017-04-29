@@ -1,0 +1,13 @@
+.main{
+    flex-grow: 1;
+    background-color:#191919;
+    height:100vh;
+    overflow-y: auto;
+    padding:20px;
+
+}
+.pageTitle{
+    color: white;
+    margin-bottom:40px;
+    font-size: 4rem;
+}
