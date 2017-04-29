@@ -8,15 +8,34 @@ class Page extends React.Component{
         constructor(props) {
         super(props);
         this.state= {
-            list:[{name:"omar hassan"}]
+            baseurl:this.props.baseurl,
+            searchType:this.props.searchType,
+            url:this.props.url
+
+        }        
+    }
+    search(event){
+        if(event.key ==='Enter'){
+            let url = this.state.baseurl+this.state.searchType+":"+event.target.value+"&type="+this.state.searchType;
+            console.log(url)
+            this.setState({url:url})
         }
     }
         render() {
-            
+            console.log("rendered")
+            let searchInput = '';
+            if(this.props.search){
+            searchInput = (				
+            <div>
+				<input onKeyUp={this.search.bind(this)} className = "search" type="text" placeholder="Search..."/>
+				</div>
+                )             
+            }
 		return (
             <div className="main">
-                <h1 className="pageTitle">{this.props.title}</h1>                
-                <GridList url={this.props.url} s></GridList>
+                <h1 className="pageTitle">{this.props.title}</h1>   
+                {searchInput}             
+                <GridList searchType = {this.state.searchType} url={this.state.url} s></GridList>
             </div>
         )
         }    

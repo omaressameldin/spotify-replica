@@ -2,12 +2,14 @@
 display: flex;
 flex-wrap: wrap;
 justify-content: space-around;
+margin-top:40px;
 }
 
 .album{
     width:100%;
     height:500px;
     background-size:cover;
+    background-color: #303030;
     opacity: 1;
     transition: all 0.2s ease-in;
 }

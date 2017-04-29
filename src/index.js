@@ -17,8 +17,9 @@ class App extends React.Component {
                 <Router>
                     <div className = "container">
                     <Menu/>                      
-                    <Route exact path="/" component={()=><Page search = {false} url="https://api.spotify.com/v1/search?type=artist&q=ad" title="Top Artists" />}/>
-                    <Route exact path="/albums" component={()=><Page search = {true} title="search for albums" />}/>
+                    <Route exact path="/" component={()=><Page search = {false} url="https://api.spotify.com/v1/search?type=artist&q=adele" searchType="artist" title="Top Artists" />}/>
+                    <Route exact path="/albums" component={()=><Page search = {true} baseurl="https://api.spotify.com/v1/search?q=" url="" searchType="album" title="Search for Albums" />}/>
+                    <Route exact path="/artists" component={()=><Page search = {true} baseurl="https://api.spotify.com/v1/search?q=" url="" searchType="artist" title="Search for Artists" />}/>
                     </div>
                 </Router>               
 			</div>
