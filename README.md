@@ -19,7 +19,7 @@
 * Do not push directly on Master
 * create feature branch (git checkout -b [branch_name]
 * Writing a meaningful commit message would go a long way
-* when done working request review using this commit: git commit -m"OK-[issue number] #review start working on [task name]" 
+* when done working create a pull request and assign a reviewer" 
 * when review is complete: create a pull request with master branch and merge your work
 
 ### Who do I talk to? ###
