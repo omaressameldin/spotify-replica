@@ -1,5 +1,6 @@
 .main{
-    flex-grow: 1;
+    /*flex-grow: 1;*/
+    flex: 1;
     background-color:#191919;
     height:100vh;
     overflow-y: auto;
@@ -10,7 +11,7 @@
     color: white;
     margin-top:10px;
     margin-bottom:20px;
-    font-size: 4rem;
+    font-size: 3rem;
 }
 .search{
     border-radius: 25px;
@@ -19,4 +20,5 @@
     height:30px;
     font-size: 20px;
     width:350px;
+    outline: none !important;
 }

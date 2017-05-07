@@ -2,7 +2,7 @@
     background-color: black;
     width: 200px;
     padding-left:40px;
-    padding-right:40px; 
+    padding-right:40px;
     text-align: left;
     display: flex;
     justify-content: space-between;
@@ -31,7 +31,7 @@
       transition: all 0.2s ease-in
 }
 .navigationMenu__item__link:hover,  .active{
- opacity: 1;   
+ opacity: 1;
 }
 .loggedIn{
     color:#1ED760;

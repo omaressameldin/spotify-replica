@@ -5,12 +5,11 @@ import defaultAlbum from '../../../public/imgs/default2.png'
 import {Link} from 'react-router-dom';
 
 class GridList    extends React.Component{
-        constructor(props) {
+    constructor(props) {
         super(props);
         this.state= {
             list:[]
         }
-        
     }
     componentDidUpdate( previousProps, previousState){
            if(previousProps.url !== this.props.url) {
@@ -19,7 +18,7 @@ class GridList    extends React.Component{
     }
     componentDidMount(){
         this.getItems();
-    }    
+    }
     getItems(){
         if(this.props.url == "")
             return
@@ -32,25 +31,24 @@ class GridList    extends React.Component{
         (error) => {
             console.log(error);
         }
-        );        
+        );
     }
-        render() {
-        console.log("rendered2")
-		return(
+    render() {
+    console.log("rendered2")
+    	return(
                     <div className = "grid">
-                        
                         {this.state.list.map(function(item, i){
                             let hasImage = item.images.length;
                             return (
                                 <Link to="/" className="grid__item" key={i}>
                                 <div className="album" style={{backgroundImage: `url(${(hasImage)?item.images[0].url : defaultAlbum})`}}></div>
-                                <h5 className="songName">{item.name}</h5>                            
+                                <h5 className="songName">{item.name}</h5>
                                 {/*<img src={(hasImage)?item.images[0].url : ''}/>*/}
                                 </Link>
                                 )
                         })}
                     </div>
-		)
+    	)
     }
 }
 export default GridList;
