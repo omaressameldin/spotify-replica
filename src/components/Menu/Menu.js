@@ -22,8 +22,8 @@ class Menu extends React.Component{
     		<img src = {logo} className = "logo"></img>
     		<ul className = "navigationMenu">
     			<li className = "navigationMenu__item" onClick={this.setActive.bind(this,'')} ><Link className = {this.addClasses('')}  to="/">Home</Link></li>
-    			<li className = "navigationMenu__item" onClick={this.setActive.bind(this,'albums')} ><Link className = {this.addClasses('albums')} to="/albums">Albums</Link></li>
-    			<li className = "navigationMenu__item" onClick={this.setActive.bind(this,'artists')}><Link className = {this.addClasses('artists')} to="/artists">Artists</Link></li>
+    			<li className = "navigationMenu__item" onClick={this.setActive.bind(this,'albums')} ><Link className = {this.addClasses('albums')} to="/search/album">Albums</Link></li>
+    			<li className = "navigationMenu__item" onClick={this.setActive.bind(this,'artists')}><Link className = {this.addClasses('artists')} to="/search/artist">Artists</Link></li>
 
     		</ul>
     		</div>
