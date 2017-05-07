@@ -20,6 +20,7 @@ class Page extends React.Component{
             album: null,
             title: this.getTitle(props),
         }
+        console.log(this.state);
     }
 
     getTitle = (props) => {
@@ -36,26 +37,29 @@ class Page extends React.Component{
     }
 
     componentDidMount(){
+        console.log(this.state);
         switch(this.state.type) {
             case 'home':
                 let urlSuffix = `search?type=artist&q=adele`;
                 this.getList(urlSuffix, 'artists', this.updateState);
                 break;
             case 'search':
-
                 break;
             case 'albums':
-
-                break;
             case 'artists':
-
+                this.changeView({
+                    params: {
+                        type: this.state.type,
+                        value: this.state.value
+                    }
+                });
                 break;
             default: break;
         }
     }
 
-    componentWillReceiveProps(props) {
-        console.log('new ');
+    changeView(props) {
+        console.log(props);
         let type = props.params.type;
         let value = props.params.value;
         let urlSuffix = `${type}/${value}`;
@@ -79,6 +83,10 @@ class Page extends React.Component{
                 }
             })
         });
+    }
+
+    componentWillReceiveProps(props) {
+        this.changeView(props);
     }
 
     updateState = () => {
@@ -183,7 +191,9 @@ class Page extends React.Component{
             case 'artists':
                 return (
                     <div className="main">
-                        <Artist></Artist>
+
+                            <Artist artist={this.state.artist} tracks={this.state.trackList} albums={this.state.list} />
+                        
                     </div>
                 )
             default:

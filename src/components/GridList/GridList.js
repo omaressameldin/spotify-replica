@@ -5,7 +5,6 @@ import defaultAlbum from '../../../public/imgs/default2.png'
 import {Link} from 'react-router-dom';
 
 const GridList = (props) => {
-
     return (
             <div className = "grid">
                 {props.list.map(function(item, i){
