@@ -2,17 +2,17 @@
 display: flex;
 flex-wrap: wrap;
 justify-content: space-around;
-margin-top:40px;
+margin-top:20px;
 }
 
-.album{
+.grid__item__image {
     width:100%;
     background-size:cover;
     background-color: #303030;
     opacity: 1;
     transition: all 0.2s ease-in;
 }
-.grid__item{
+.grid__item {
     width: 24%;
     text-align: center;
     color:white;
@@ -22,15 +22,15 @@ margin-top:40px;
     margin-top:10px;
     margin-bottom: 10px;
 }
-.album:before {
+.grid__item__image:before {
     content: "";
     display: block;
     width: 100%;
     padding-top: 100%;
 }
-.songName{
+..grid__item__title {
     margin-top:15px;
 }
-.grid__item:hover .album{
+.grid__item:hover .album {
     opacity: 0.2
 }

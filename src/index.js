@@ -38,9 +38,9 @@ class App extends React.Component {
             <div>
                 <Router>
                     <div className = "container">
-                    <Menu/>
-                    <Route exact path="/" component={Page} />
-                    <Route exact path="/:type/:value" component={(match) => <Page params={match.match.params}/>}/>
+                        <Menu/>
+                        <Route exact path="/" component={Page} />
+                        <Route exact path="/:type/:value" component={(match) => <Page params={match.match.params}/>}/>
                     </div>
                 </Router>
             <div className = "player">
@@ -68,6 +68,7 @@ class App extends React.Component {
             />                    
             </div>    
 			</div>
+
         )
     }
 }
