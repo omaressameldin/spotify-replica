@@ -12,16 +12,16 @@ class App extends React.Component {
 
 
     render() {
-        return ( 
+        return (
             <div >
                 <Router>
                     <div className = "container">
-                    <Menu/>                      
-                    <Route exact path="/" component={()=><Page search = {false} url="https://api.spotify.com/v1/search?type=artist&q=adele" searchType="artist" title="Top Artists" />}/>
-                    <Route exact path="/albums" component={()=><Page search = {true} baseurl="https://api.spotify.com/v1/search?q=" url="" searchType="album" title="Search for Albums" />}/>
-                    <Route exact path="/artists" component={()=><Page search = {true} baseurl="https://api.spotify.com/v1/search?q=" url="" searchType="artist" title="Search for Artists" />}/>
+                    <Menu/>
+                    <Route exact path="/" component={Page} />
+                    <Route exact path="/:type/:value" component={(match) => <Page params={match.match.params}/>}/>
+
                     </div>
-                </Router>               
+                </Router>
 			</div>
         )
     }

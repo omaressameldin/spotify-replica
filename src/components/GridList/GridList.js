@@ -4,40 +4,11 @@ import './gridList.css';
 import defaultAlbum from '../../../public/imgs/default2.png'
 import {Link} from 'react-router-dom';
 
-class GridList    extends React.Component{
-    constructor(props) {
-        super(props);
-        this.state= {
-            list:[]
-        }
-    }
-    componentDidUpdate( previousProps, previousState){
-           if(previousProps.url !== this.props.url) {
-                this.getItems();
-            }
-    }
-    componentDidMount(){
-        this.getItems();
-    }
-    getItems(){
-        if(this.props.url == "")
-            return
-        axios.get(this.props.url).then((response) =>{
-            if(this.props.searchType == "artist")
-                this.setState({list: response.data.artists.items});
-            else
-                this.setState({list: response.data.albums.items});
-        },
-        (error) => {
-            console.log(error);
-        }
-        );
-    }
-    render() {
-    console.log("rendered2")
-    	return(
+const GridList = (props) => {
+
+    return (
                     <div className = "grid">
-                        {this.state.list.map(function(item, i){
+                        {props.list.map(function(item, i){
                             let hasImage = item.images.length;
                             return (
                                 <Link to="/" className="grid__item" key={i}>
@@ -49,6 +20,5 @@ class GridList    extends React.Component{
                         })}
                     </div>
     	)
-    }
 }
 export default GridList;
