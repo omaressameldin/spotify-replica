@@ -9,20 +9,18 @@ class App extends React.Component {
     constructor() {
         super();
     }
-
-
+    
     render() {
         return (
             <div >
                 <Router>
                     <div className = "container">
-                    <Menu/>
-                    <Route exact path="/" component={Page} />
-                    <Route exact path="/:type/:value" component={(match) => <Page params={match.match.params}/>}/>
-
+                        <Menu/>
+                        <Route exact path="/" component={Page} />
+                        <Route exact path="/:type/:value" component={(match) => <Page params={match.match.params}/>}/>
                     </div>
                 </Router>
-			</div>
+            </div>
         )
     }
 }
