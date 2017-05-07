@@ -163,15 +163,6 @@ class Page extends React.Component{
 
         switch(this.state.type) {
             case 'home':
-                return (
-                    <div className="main">
-                        <h1 className="pageTitle">{this.state.title}</h1>
-                        {searchInput}
-                        {this.state.list && this.state.list.length > 0 &&
-                            <GridList list={this.state.list} type={gridType}></GridList>
-                        }
-                    </div>
-                )
             case 'search':
                 return (
                     <div className="main">
@@ -190,11 +181,13 @@ class Page extends React.Component{
                 )
             case 'artists':
                 return (
-                    <div className="main">
 
-                            <Artist artist={this.state.artist} tracks={this.state.trackList} albums={this.state.list} />
-                        
-                    </div>
+                        <div className="main">
+                            {this.state.artist &&
+                                <Artist artist={this.state.artist} tracks={this.state.trackList} albums={this.state.list} />
+                            }
+                        </div>
+
                 )
             default:
                 return (
