@@ -179,7 +179,7 @@ class Page extends React.Component{
                 return (
                     <div className="main">
                             {this.state.album &&
-                                <Album album={this.state.album} tracks={this.state.trackList} />
+                                <Album changeSong = {this.props.changeSong} album={this.state.album} tracks={this.state.trackList} />
                             }
                     </div>
                 )
@@ -188,7 +188,7 @@ class Page extends React.Component{
 
                     <div className="main">
                         {this.state.artist &&
-                            <Artist artist={this.state.artist} tracks={this.state.trackList} albums={this.state.list} />
+                            <Artist artist={this.state.artist} changeSong = {this.props.changeSong} tracks={this.state.trackList} albums={this.state.list} />
                         }
                     </div>
 

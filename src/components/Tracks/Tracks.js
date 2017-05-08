@@ -14,7 +14,7 @@ class Tracks extends React.Component {
     onClick = (item, i) => {
         console.log(i);
         this.setState({activeIdx: i});
-        /*activate track*/
+       this.props.changeSong({url:"https://p.scdn.co/mp3-preview/4839b070015ab7d6de9fec1756e1f3096d908fba"})
     }
 
     render() {

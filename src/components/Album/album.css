@@ -38,6 +38,9 @@
     width: 100%;
     padding-top: 100%;
 }
+.tracks-wrapper{
+    flex:1
+}
 
 .btn {
     border-radius: 25px;

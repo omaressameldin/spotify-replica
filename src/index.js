@@ -9,7 +9,6 @@ import '../public/font-awesome-4.7.0/css/font-awesome.min.css';
 class App extends React.Component {
     constructor() {
         super();
-
     }
 
 
@@ -17,16 +16,17 @@ class App extends React.Component {
 
 
     render() {
+        console.log(this.refs.player)
         return (
             <div>
+                <Player  ref="player"/>                
                 <Router>
                     <div className = "container">
                         <Menu/>
                         <Route exact path="/" component={Page} />
-                        <Route exact path="/:type/:value" component={(match) => <Page params={match.match.params}/>}/>
+                        <Route exact path="/:type/:value" component={(match) => <Page changeSong = {this.refs.player.changeSong} params={match.match.params}/>}/>
                     </div>
                 </Router>  
-                <Player/>
 			</div>
 
         )
