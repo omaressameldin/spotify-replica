@@ -7,6 +7,7 @@ import defaultImage from '../../../public/imgs/default2.png'
 
 const Album = (props) => {
         let image = props.album.images.length > 0? props.album.images[0].url : defaultImage;
+
         return(
             <div className = 'album-container'>
                 <div className="album">
@@ -17,7 +18,7 @@ const Album = (props) => {
                     <Link to={`/artists/${props.album.artists[0].id}`} className="btn btn-green">Artist Profile</Link>
                 </div>
                 <div className = "tracks-wrapper">
-                 <Tracks changeSong = {this.props.changeSong} list={props.album.tracks.items}></Tracks>
+                 <Tracks changeSong = {props.changeSong} list={props.album.tracks.items}></Tracks>
                 </div>
             </div>
         )

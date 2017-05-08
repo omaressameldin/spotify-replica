@@ -4,8 +4,8 @@ import ReactPlayer from 'react-player'
 import FontAwesome from 'react-fontawesome';
 
 class Player extends React.Component{
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             url: '',
             title:'',
@@ -20,11 +20,15 @@ class Player extends React.Component{
             progress: 0
         }
     }
+    componentDidMount(){
+         this.props.passChangeSong(this.changeSong);
+    }
 changeSong = (info) => {
     this.setState({
         url: info.url,
         title: info.title,
         albumName: info.albumName,
+        image: info.image,
         playing:true,
         played:0,
         loaded: 0,

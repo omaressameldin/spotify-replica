@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import './tracks.css';
 import {Link} from 'react-router-dom';
+import defaultImage from '../../../public/imgs/default2.png'
 
 class Tracks extends React.Component {
     constructor(props) {
@@ -13,8 +14,13 @@ class Tracks extends React.Component {
 
     onClick = (item, i) => {
         console.log(i);
-        this.setState({activeIdx: i});
-       this.props.changeSong({url:"https://p.scdn.co/mp3-preview/4839b070015ab7d6de9fec1756e1f3096d908fba"})
+        axios.get(`https://api.spotify.com/v1/artists/${item.artists[0].id}`).then((response) => {
+            let image = response.data.images.length? response.data.images[0].url : defaultImage;
+            this.props.changeSong({url:item.preview_url, title: item.name, image: image, albumName: item.artists[0].name})
+            this.setState({activeIdx: i});
+            console.log(item.href);
+        })
+
     }
 
     render() {
