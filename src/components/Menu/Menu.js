@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import './menu.css';
 import logo from '../../../public/imgs/logo.png'
+import FontAwesome from 'react-fontawesome';
 class Menu extends React.Component{
     constructor() {
         super();
@@ -27,7 +28,7 @@ class Menu extends React.Component{
 
     		</ul>
     		</div>
-    		<a className = "loggedIn">Omar Essam</a>
+    		<a className = "loggedIn"> <FontAwesome name = "user" /> Omar Esam</a>
     		</aside>
     	)
 	}

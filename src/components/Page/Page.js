@@ -4,6 +4,7 @@ import GridList from '../GridList/GridList'
 import './page.css';
 import {Link} from 'react-router-dom';
 import Artist from '../Artist/Artist';
+import Album from '../Album/Album';
 
 const baseurl = "https://api.spotify.com/v1/";
 
@@ -72,7 +73,7 @@ class Page extends React.Component{
             return;
         }
         this.getItem(urlSuffix, type, () => {
-            this.getTracks(`${urlSuffix}` , type, () => {
+            this.getTracks(`${urlSuffix}`, type, () => {
                 if(type === 'artists') {
                     this.getList(`${urlSuffix}/albums`, '', () => {
                         this.updateState();
@@ -177,17 +178,19 @@ class Page extends React.Component{
             case 'albums':
                 return (
                     <div className="main">
-
+                            {this.state.album &&
+                                <Album changeSong = {this.props.changeSong} album={this.state.album} tracks={this.state.trackList} />
+                            }
                     </div>
                 )
             case 'artists':
                 return (
 
-                        <div className="main">
-                            {this.state.artist &&
-                                <Artist artist={this.state.artist} tracks={this.state.trackList} albums={this.state.list} />
-                            }
-                        </div>
+                    <div className="main">
+                        {this.state.artist &&
+                            <Artist artist={this.state.artist} changeSong = {this.props.changeSong} tracks={this.state.trackList} albums={this.state.list} />
+                        }
+                    </div>
 
                 )
             default:

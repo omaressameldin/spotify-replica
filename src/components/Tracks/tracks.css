@@ -1,0 +1,28 @@
+.tracks__list {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.tracks__list__item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    cursor: pointer;
+    transition: 0.3s linear;
+    color: white;
+    padding: 17px 20px;
+}
+.tracks__list__item.active {
+    color: #2ebd59;
+}
+.tracks__list__item:hover {
+    background-color: #000;
+}
+.tracks__list__name {
+    display: inline-flex;
+    width: 80%;
+    text-align: left;
+}
