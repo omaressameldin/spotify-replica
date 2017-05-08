@@ -1,6 +1,8 @@
 import React from 'react';
 import './player.css';
 import ReactPlayer from 'react-player'
+import FontAwesome from 'react-fontawesome';
+
 class Player extends React.Component{
     constructor() {
         super();
@@ -21,8 +23,7 @@ class Player extends React.Component{
 
   onProgress = (info) => {
     let progress = Math.floor(info.playedSeconds/this.state.duration * 100)
-    console.log(progress)
-    this.setState({progress: progress, played:info.playedSeconds})
+    this.setState({progress: progress, played:Math.floor(info.playedSeconds)})
     
   }      
 
@@ -36,9 +37,16 @@ class Player extends React.Component{
                     <h3 className = "song-info__titles__title">{this.state.albumName}</h3>
                 </div>
                 </div>
-                <div className = "progress-bar">
-                <div  style={{width: `${this.state.progress+"%"}`}} className = "progress-bar__finished"></div>
-                </div>                                
+                <div className = "progress">
+                <h2 className = "durations">{this.state.played}</h2>
+                <div className = "bar-button-container">     
+                 <FontAwesome className="button" name={(this.state.playing)? 'pause': 'play'} onClick={()=>{this.setState({playing: !this.state.playing})}} size='2x' />
+                <div className = "progress__bar" onClick = {(e)=>{let jump = (e.pageX-e.currentTarget.offsetLeft)/e.currentTarget.offsetWidth; this.player.seekTo(jump);}}>
+                <div  style={{width: `${this.state.progress+"%"}`}} className = "progress__bar__finished"></div>
+                </div> 
+                </div>
+                <h2 className = "durations">{this.state.duration}</h2> 
+                </div>                              
             <ReactPlayer 
               ref={player => { this.player = player }}
               width='0'
@@ -49,7 +57,7 @@ class Player extends React.Component{
               onPause={() => this.setState({ playing: false })}
               onEnded={() => this.setState({ playing: false })}
               onProgress={this.onProgress}
-              onDuration={duration => this.setState({ duration })}
+              onDuration={duration => this.setState({ duration:Math.floor(duration) })}
             />                    
             </div>  
     	)

@@ -5,7 +5,7 @@ import Page from './components/Page/Page'
 import Player from './components/Player/Player'
 import Menu from './components/Menu/Menu'
 import './index.css';
-
+import '../public/font-awesome-4.7.0/css/font-awesome.min.css';
 class App extends React.Component {
     constructor() {
         super();
