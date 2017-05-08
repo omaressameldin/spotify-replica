@@ -21,7 +21,7 @@
 }
 .bar-button-container{
     margin-right:10px;
-    margin-left: 10px; 
+    margin-left: 10px;
     flex-grow: 2;
     display: flex;
     flex-direction: column;
@@ -37,12 +37,12 @@
     cursor: pointer;
 }
 .button:hover{
-    color:#62D61F;
+    color: #2ebd59;
 }
 .progress__bar__finished{
 	width:0%;
 	height: 5px;
-	background-color: #62D61F
+	background-color: #2ebd59;
 }
 .durations{
     font-size:20px;
@@ -56,7 +56,7 @@
 	background-size:cover;
 	height:70px;
 	width:70px;
-	margin-right:10px; 
+	margin-right:10px;
 }
 .song-info__titles{
 	padding:0;
