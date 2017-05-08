@@ -37,12 +37,12 @@
     cursor: pointer;
 }
 .button:hover{
-    color:#008000;
+    color:#62D61F;
 }
 .progress__bar__finished{
 	width:0%;
 	height: 6px;
-	background-color: #008000
+	background-color: #62D61F
 }
 .durations{
     font-size:20px;
