@@ -4,6 +4,7 @@ import GridList from '../GridList/GridList'
 import './page.css';
 import {Link} from 'react-router-dom';
 import Artist from '../Artist/Artist';
+import Album from '../Album/Album';
 
 const baseurl = "https://api.spotify.com/v1/";
 
@@ -177,7 +178,9 @@ class Page extends React.Component{
             case 'albums':
                 return (
                     <div className="main">
-
+                            {this.state.album &&
+                                <Album album={this.state.album} tracks={this.state.trackList} />
+                            }
                     </div>
                 )
             case 'artists':

@@ -47,6 +47,7 @@
 .durations{
     font-size:20px;
     font-weight: 100;
+	margin-top:25px;
 }
 .song-info{
 	display:flex;
