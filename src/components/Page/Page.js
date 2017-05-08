@@ -73,7 +73,7 @@ class Page extends React.Component{
             return;
         }
         this.getItem(urlSuffix, type, () => {
-            this.getTracks(`${urlSuffix}` , type, () => {
+            this.getTracks(`${urlSuffix}`, type, () => {
                 if(type === 'artists') {
                     this.getList(`${urlSuffix}/albums`, '', () => {
                         this.updateState();
@@ -186,11 +186,11 @@ class Page extends React.Component{
             case 'artists':
                 return (
 
-                        <div className="main">
-                            {this.state.artist &&
-                                <Artist artist={this.state.artist} tracks={this.state.trackList} albums={this.state.list} />
-                            }
-                        </div>
+                    <div className="main">
+                        {this.state.artist &&
+                            <Artist artist={this.state.artist} tracks={this.state.trackList} albums={this.state.list} />
+                        }
+                    </div>
 
                 )
             default:

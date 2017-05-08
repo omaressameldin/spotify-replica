@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import './album.css';
+import Tracks from '../Tracks/Tracks';
 import {Link} from 'react-router-dom';
 import defaultImage from '../../../public/imgs/default2.png'
 
@@ -14,6 +15,9 @@ const Album = (props) => {
                     <h3 className = "album__artist">{props.album.artists[0].name}</h3>
                     <h3 className = "album__tracks">{props.album.tracks.items.length + " trakcs"}</h3>                    
                     <Link to={`/artists/${props.album.artists[0].id}`} className="btn btn-green">Artist Profile</Link>
+                </div>
+                <div class = "tracks-wrapper">
+                
                 </div>
             </div>
         )
