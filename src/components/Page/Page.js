@@ -97,6 +97,7 @@ class Page extends React.Component{
 
     getList = (urlSuffix, type, cb) => {
         let url = baseurl + urlSuffix;
+
         axios.get(url).then((response) => {
             if(type === "artists") {
                 this._temp.list = response.data.artists.items;

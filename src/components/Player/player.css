@@ -1,0 +1,73 @@
+.player{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: fixed;
+	padding-top:20px;
+	padding-bottom:20px;
+	padding-right:40px;
+	padding-left:40px;
+	flex-direction: row;
+	bottom:0;
+	width:100%;
+	height: 90px;;
+	background-color:#252525;
+}
+.progress{
+    width:40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.bar-button-container{
+    margin-right:10px;
+    margin-left: 10px; 
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+}
+.progress__bar{
+	background-color:#696969;
+    height: 5px;
+}
+.button{
+    align-self: center;
+    color:white;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+.button:hover{
+    color:#62D61F;
+}
+.progress__bar__finished{
+	width:0%;
+	height: 5px;
+	background-color: #62D61F
+}
+.durations{
+    font-size:20px;
+    font-weight: 100;
+}
+.song-info{
+	display:flex;
+}
+
+.song-info__album{
+	background-size:cover;
+	height:70px;
+	width:70px;
+	margin-right:10px; 
+}
+.song-info__titles{
+	padding:0;
+	display: flex;
+	flex-direction: column;
+	align-items:flex-start ;
+	justify-content: space-between
+}
+.song-info__titles__title{
+	margin:0;
+	color:white;
+	text-transform: uppercase;
+	font-size: medium;
+}
