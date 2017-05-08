@@ -7,12 +7,12 @@ class Player extends React.Component{
     constructor() {
         super();
         this.state = {
-            url: 'https://p.scdn.co/mp3-preview/4839b070015ab7d6de9fec1756e1f3096d908fba',
-            title:'test song',
-            albumName:"Q",
-            image:'https://i.scdn.co/image/17743a9712a501a763b1d0851c5014c5269236cc',
-            playing: true,
-            volume: 0.8,
+            url: '',
+            title:'',
+            albumName:"",
+            image:'',
+            playing: false,
+            volume: 1,
             played: 0,
             loaded: 0,
             duration: 0,
@@ -20,7 +20,19 @@ class Player extends React.Component{
             progress: 0
         }
     }
-
+changeSong = (info) => {
+    this.setState({
+        url: info.url,
+        title: info.title,
+        albumName: info.albumName,
+        playing:true,
+        played:0,
+        loaded: 0,
+        duration: 0,
+        playbackRate: 1.0,
+        progress:0
+    })
+}
   onProgress = (info) => {
     let progress = Math.floor(info.playedSeconds/this.state.duration * 100)
     this.setState({progress: progress, played:Math.floor(info.playedSeconds)})
@@ -28,6 +40,8 @@ class Player extends React.Component{
   }      
 
 	render(){
+        if(this.state.url =='')
+            return null        
     	return(
             <div className = "player">
                 <div className = "song-info">
