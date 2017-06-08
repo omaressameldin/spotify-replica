@@ -21,7 +21,7 @@ const Artist = (props) => {
             </div>
             <div className="tracks-wrapper">
                 <h3 className="top-tracks">Top Tracks</h3>
-                <Tracks changeSong = {props.changeSong} list={props.tracks}></Tracks>
+                <Tracks renewAccessToken = {props.renewAccessToken} changeSong = {props.changeSong} list={props.tracks}></Tracks>
             </div>
 
             <h3>Albums</h3>

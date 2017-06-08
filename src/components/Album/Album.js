@@ -18,7 +18,7 @@ const Album = (props) => {
                     <Link to={`/artists/${props.album.artists[0].id}`} className="btn btn-green">Artist Profile</Link>
                 </div>
                 <div className = "tracks-wrapper">
-                 <Tracks changeSong = {props.changeSong} list={props.album.tracks.items}></Tracks>
+                 <Tracks renewAccessToken = {props.renewAccessToken} changeSong = {props.changeSong} list={props.album.tracks.items}></Tracks>
                 </div>
             </div>
         )

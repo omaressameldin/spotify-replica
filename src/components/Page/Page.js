@@ -5,7 +5,6 @@ import './page.css';
 import {Link} from 'react-router-dom';
 import Artist from '../Artist/Artist';
 import Album from '../Album/Album';
-
 const baseurl = "https://api.spotify.com/v1/";
 
 class Page extends React.Component{
@@ -98,48 +97,59 @@ class Page extends React.Component{
 
     getList = (urlSuffix, type, cb) => {
         let url = baseurl + urlSuffix;
+        this.props.renewAccessToken((access_token)=>{
+            axios.defaults.headers.get['Authorization'] = "Bearer " + access_token;
+            axios.get(url).then((response) => {
+                if(type === "artists") {
+                    this._temp.list = response.data.artists.items;
+                } else if(type === "albums"){
+                    this._temp.list = response.data.albums.items;
+                } else {
+                    this._temp.list = response.data.items;
+                }
+                cb();
+            },
+            (error) => {
+                console.log(error);
+            });            
+        })
 
-        axios.get(url).then((response) => {
-            if(type === "artists") {
-                this._temp.list = response.data.artists.items;
-            } else if(type === "albums"){
-                this._temp.list = response.data.albums.items;
-            } else {
-                this._temp.list = response.data.items;
-            }
-            cb();
-        },
-        (error) => {
-            console.log(error);
-        });
     }
 
     getTracks = (urlSuffix, type, cb) => {
         let url = baseurl + urlSuffix;
         url = type === 'artists'? url + '/top-tracks?country=US' : url + '/tracks';
-        axios.get(url).then((response) => {
-            this._temp.trackList = type === 'artists'? response.data.tracks : response.data.items;
-            cb();
-        },
-        (error) => {
-            console.log(error);
-        });
+        this.props.renewAccessToken((access_token)=>{
+            axios.defaults.headers.get['Authorization'] = "Bearer " + access_token;
+            axios.get(url).then((response) => {
+                this._temp.trackList = type === 'artists'? response.data.tracks : response.data.items;
+                cb();
+            },
+            (error) => {
+                console.log(error);
+            });            
+        })        
+
     }
 
     getItem = (urlSuffix, type, cb) => {
         let url = baseurl + urlSuffix;
-        axios.get(url).then((response) => {
-            if(type === "artists") {
-                this._temp.artist = response.data;
-                cb();
-            } else {
-                this._temp.album = response.data;
-                cb();
-            }
-        },
-        (error) => {
-            console.log(error);
+        this.props.renewAccessToken((access_token)=>{
+            axios.defaults.headers.get['Authorization'] = "Bearer " + access_token;
+            axios.get(url).then((response) => {
+                if(type === "artists") {
+                    this._temp.artist = response.data;
+                    cb();
+                } else {
+                    this._temp.album = response.data;
+                    cb();
+                }
+            },
+            (error) => {
+                console.log(error);
+            });
         });
+
     }
 
     search = (event) => {
@@ -179,7 +189,7 @@ class Page extends React.Component{
                 return (
                     <div className="main">
                             {this.state.album &&
-                                <Album changeSong = {this.props.changeSong} album={this.state.album} tracks={this.state.trackList} />
+                                <Album renewAccessToken = {this.props.renewAccessToken} changeSong = {this.props.changeSong} album={this.state.album} tracks={this.state.trackList} />
                             }
                     </div>
                 )
