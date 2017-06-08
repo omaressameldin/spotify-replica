@@ -22,7 +22,6 @@ class Contacts extends React.Component{
 
 		let users = this.props.users.filter((user) => user.name.indexOf(keyword) > -1);
 
-		console.log(users);
 		return(
 			<div>
 				<input type="text" onChange={this.searchUsers.bind(this, event)} placeholder="Search..."/>

@@ -13,12 +13,10 @@ class Tracks extends React.Component {
     }
 
     onClick = (item, i) => {
-        console.log(i);
         axios.get(`https://api.spotify.com/v1/artists/${item.artists[0].id}`).then((response) => {
             let image = response.data.images.length? response.data.images[0].url : defaultImage;
             this.props.changeSong({url:item.preview_url, title: item.name, image: image, albumName: item.artists[0].name})
             this.setState({activeIdx: i});
-            console.log(item.href);
         })
 
     }

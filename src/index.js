@@ -17,7 +17,6 @@ class App extends React.Component {
     }
 
    passChangeSong = (changeSong) =>{
-        console.log(changeSong)
         this.setState({changeSong: changeSong})
     }
     renewAccessToken = (cb)=>{
@@ -25,18 +24,15 @@ class App extends React.Component {
                  headers: {'Content-Type': 'application/www-x-form-urlencoded', "Accept": "application/json"}
         };
         axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
-        axios.post("https://accounts.spotify.com/api/token", querystring.stringify({
+        axios.post("https://cors-anywhere.herokuapp.com/https://accounts.spotify.com/api/token", querystring.stringify({
          "grant_type":"refresh_token",
          "refresh_token": "AQCyKqlZKG49q04MlOFwzVBSwQ2lFxm9zClHc9s_u_KPb24Qs56jc8Rotdg646NDNcnxUgXmJu2qN0GU8wsucY3iRARyICX8oSctFIVcFqr9tuvNBETH0gAa1gV42bYNxPg",
          "client_id": "eec252e2a3344c7d9b414459fb7816c4",
          "client_secret": "aaf35d9192b94f028ef5a3e8ce39e0da"   
         })).then((response) => {
-            console.log("omar essam eldin")
-            console.log(response)
             cb(response.data.access_token)
         },
         (error) => {
-            console.log("omar essam eldin2")
             console.log(error);
         });        
     }

@@ -20,7 +20,6 @@ class Page extends React.Component{
             album: null,
             title: this.getTitle(props),
         }
-        console.log(this.state);
     }
 
     getTitle = (props) => {
@@ -37,7 +36,6 @@ class Page extends React.Component{
     }
 
     componentDidMount(){
-        console.log(this.state);
         switch(this.state.type) {
             case 'home':
                 let urlSuffix = `search?type=artist&q=adele`;
@@ -59,7 +57,6 @@ class Page extends React.Component{
     }
 
     changeView(props) {
-        console.log(props);
         let type = props.params.type;
         let value = props.params.value;
         let urlSuffix = `${type}/${value}`;
@@ -91,7 +88,6 @@ class Page extends React.Component{
 
     updateState = () => {
         this.setState({...this._temp});
-        console.log(this.state);
         this._temp = {};
     }
 
