@@ -7,7 +7,6 @@ import Tracks from '../Tracks/Tracks';
 import defaultImage from '../../../public/imgs/default2.png'
 
 const Artist = (props) => {
-    console.log(props);
     let image = props.artist.images.length > 0? props.artist.images[0].url : defaultImage;
     return (
         <div className="artist">
