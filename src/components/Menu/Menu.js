@@ -25,9 +25,14 @@ class Menu extends React.Component{
     			<li className = "navigationMenu__item" onClick={this.setActive.bind(this,'')} ><Link className = {this.addClasses('')}  to="/">Home</Link></li>
     			<li className = "navigationMenu__item" onClick={this.setActive.bind(this,'albums')} ><Link className = {this.addClasses('albums')} to="/search/album">Albums</Link></li>
     			<li className = "navigationMenu__item" onClick={this.setActive.bind(this,'artists')}><Link className = {this.addClasses('artists')} to="/search/artist">Artists</Link></li>
-
     		</ul>
     		</div>
+    		<img src = {logo} className = "logo mobile"></img>
+    		<ul className = "navigationMenu mobile">
+    			<li className = "navigationMenu__item" onClick={this.setActive.bind(this,'')} ><Link className = {this.addClasses('')}  to="/">Home</Link></li>
+    			<li className = "navigationMenu__item" onClick={this.setActive.bind(this,'albums')} ><Link className = {this.addClasses('albums')} to="/search/album">Albums</Link></li>
+    			<li className = "navigationMenu__item" onClick={this.setActive.bind(this,'artists')}><Link className = {this.addClasses('artists')} to="/search/artist">Artists</Link></li>
+    		</ul>
     		<a className = "loggedIn"> <FontAwesome name = "user" /> Omar Esam</a>
     		</aside>
     	)

@@ -24,3 +24,8 @@
     outline: none !important;
     margin-left: 43px;
 }
+@media screen and (max-width: 720px) {
+    .pageTitle{
+        font-size: xx-large;
+    }
+}
