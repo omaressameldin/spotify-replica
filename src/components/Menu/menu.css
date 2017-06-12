@@ -1,41 +1,88 @@
-.sidebar{
+.sidebar {
     background-color: black;
     width: 220px;
-    padding-left:40px;
-    padding-right:40px;
+    padding-left: 40px;
+    padding-right: 40px;
     text-align: left;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     height: 100vh;
 }
-.logo{
+
+.logo {
     margin-top: 40px;
     margin-bottom: 50px;
-    max-width:100%;
+    max-width: 100%;
 }
-.navigationMenu{
-  list-style-type: none;
-  padding:0;
+
+.navigationMenu {
+    list-style-type: none;
+    padding: 0;
 }
-.navigationMenu__item{
+
+.navigationMenu__item {
     margin-bottom: 10px;
 }
-.navigationMenu__item__link{
-      text-decoration: none;
-      text-transform: capitalize;
-      font-size: 20px;
-      font-weight: bold;
-      color:white;
-      opacity: 0.7;
-      transition: all 0.2s ease-in
+
+.navigationMenu__item__link {
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    opacity: 0.7;
+    transition: all 0.2s ease-in
 }
-.navigationMenu__item__link:hover,  .active{
- opacity: 1;
+
+.navigationMenu__item__link:hover,
+.active {
+    opacity: 1;
 }
-.loggedIn{
-    color:#1ED760;
+
+.loggedIn {
+    color: #1ED760;
     margin-bottom: 30px;
     font-size: 20px;
+}
+.mobile{
+    display: none;
+}
 
+@media screen and (max-width: 1000px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        align-items: center;
+        padding:5px;
+    }
+    .logo{
+        margin:5px;
+        width:20%;
+    }
+.navigationMenu__item {
+    margin-bottom: 0;
+}    
+.mobile{
+    display: block;
+}
+    .menuWrapper{
+        display: none;
+    }
+.navigationMenu__item{
+    display: inline-block;
+    margin-right: 10px;
+}
+.navigationMenu{
+    margin:0;
+}
+.loggedIn{
+    margin:0;
+}
+}
+@media screen and (max-width: 720px) {
+.navigationMenu__item__link, .loggedIn {
+    font-size: medium;
+}
 }
