@@ -74,3 +74,11 @@
 	text-transform: uppercase;
 	font-size: medium;
 }
+@media screen and (max-width: 720px) {
+	.song-info__album{
+		display: none;
+	}
+	.player{
+		padding:10px;
+	}
+}
