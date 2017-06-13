@@ -86,3 +86,8 @@
     font-size: medium;
 }
 }
+@media screen and (max-width: 480px) {
+    .navigationMenu__item__link, .loggedIn {
+        font-size: small;
+    }
+}
