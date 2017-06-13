@@ -33,7 +33,7 @@ class Menu extends React.Component{
     			<li className = "navigationMenu__item" onClick={this.setActive.bind(this,'albums')} ><Link className = {this.addClasses('albums')} to="/search/album">Albums</Link></li>
     			<li className = "navigationMenu__item" onClick={this.setActive.bind(this,'artists')}><Link className = {this.addClasses('artists')} to="/search/artist">Artists</Link></li>
     		</ul>
-    		<a className = "loggedIn"> <FontAwesome name = "user" /> Omar Esam</a>
+    		<a className = "loggedIn"> <FontAwesome name = "user" /> Omar Essam</a>
     		</aside>
     	)
 	}

@@ -1,5 +1,6 @@
 .album-container{
     display:flex;
+    flex-wrap: wrap;
     padding:30px;
 }
 .album{
@@ -59,4 +60,9 @@
 }
 .btn-green:hover {
     background-color: #238240;
+}
+@media screen and (max-width: 1000px) {
+.album{
+    width:100%;
+}
 }
