@@ -9,8 +9,7 @@
 * A Mini spotify Replica using ReactJS
 
 ### Demo ###
-* [Link](https://spotify-replica.herokuapp.com){:target="_blank"}
-
+* <a href="https://spotify-replica.herokuapp.com" target="_blank">link</a>
 ### How do I get set up? ###
 
 * pull repo (git init, git remote add origin [url], git pull origin master)
