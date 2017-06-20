@@ -9,7 +9,7 @@
 * A Mini spotify Replica using ReactJS
 
 ### Demo ###
-* [Link](https://spotify-replica.herokuapp.com)
+* [Link](https://spotify-replica.herokuapp.com){:target="_blank"}
 
 ### How do I get set up? ###
 
