@@ -1,12 +1,15 @@
 # README #
 
-### What is this repository for? ###
+### Project Info ###
 
 * Spotify Replica
 * 1.0
 
-### What is this repository for? ###
+### Description ###
 * A Mini spotify Replica using ReactJS
+
+### Demo ###
+* [Link](https://spotify-replica.herokuapp.com)
 
 ### How do I get set up? ###
 
